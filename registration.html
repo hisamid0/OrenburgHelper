@@ -1,0 +1,62 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Регистрация</title>
+
+</head>
+
+<body>
+    <div class="body-container--register">
+        <a href="index.html">
+            <img class="text-logo--no-left-margin" src="img/text-logo.svg" href="index.html">
+        </a>
+        <h1>Регистрация</h1>
+
+        <p class="p--16">Личные данные</p>
+
+        <div class="container-register-data">
+            <input class="container-register-data__item" type="text" name="reg_surname" required placeholder="Фамилия">
+            <input class="container-register-data__item" type="text" name="reg_name" required placeholder="Имя">
+            <input class="container-register-data__item" type="text" name="reg_patronymic" required placeholder="Отчество">
+            <input class="container-register-data__item" type="date" name="reg_birthday" required placeholder="Дата рождения">
+            <input class="container-register-data__item" type="tel" name="reg_phone-number" required placeholder="Мобильный телефон">
+            <input class="container-register-data__item" type="email" name="reg_email" required placeholder="Электронная почта">
+        </div>
+        <hr class="hr--4">
+
+        <p class="p--16">Безопасность</p>
+
+        <div class="container-register-data">
+            <input class="container-register-data__item" type="text" name="sec_password" required placeholder="Придумайте пароль">
+            <input class="container-register-data__item" type="text" name="sec_secret-question" required placeholder="Контрольный вопрос">
+            <input class="container-register-data__item" type="text" name="sec_secret-answer" required placeholder="Ответ на вопрос">
+        </div>
+        <hr class="hr--4">
+
+        <input type="checkbox" name="checkbox-terms-of-service" class="checkbox">
+        <p class="p--16">
+            С <a>условиями использования</a> ознакомлен и согласен.
+        </p>
+        </input>
+        <input type="checkbox" name="checkbox-terms-of-service" class="checkbox">
+        <p class="p--16">Настоящим согласен с получением Email рассылок, информации, материалов в т.ч. материалов рекламного характера.</p>
+        </input>
+
+        <input type="submit" class="button" value="Зарегистрироваться">
+        </input>
+
+        <hr class="hr--4">
+
+        <div class="footer">
+            <a class="footer__line">2021@Помощник Оренбурга</a>
+            <a>Разработан студентами 16КБ(С)РЗПО</a>
+
+        </div>
+    </div>
+</body>
+
+</html>
