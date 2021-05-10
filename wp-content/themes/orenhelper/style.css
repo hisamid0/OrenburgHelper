@@ -1,0 +1,381 @@
+/*!
+Theme Name: Помощник Оренбурга
+Author: 16КБ(с)РЗПО
+Version: 1.0.0
+Description: Кастомная тема для стартапа "Помощник Оренбурга"
+*/
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    background: white;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    z-index: 100;
+}
+
+.body-container {
+    width: 85%;
+    display: block;
+    /* max-width: 1620px; */
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.text-logo {
+    height: 8vmin;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+.text-logo--no-left-margin {
+    height: 8vmin;
+    margin-top: 10px;
+}
+
+.text-container {
+    max-width: 40%;
+    margin-left: 10%;
+    display: block;
+}
+
+.text-container--small {
+    max-width: 31%;
+    min-width: 130px;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: max(3.5vmax, 32px);
+    line-height: 136%;
+}
+
+h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: max(2.625vmax, 24px);
+    line-height: 136%;
+    margin: 0px;
+}
+
+.hr--1 {
+    height: 15.5vmin;
+    border: none;
+}
+
+.hr--2 {
+    height: 37vmin;
+    border: none;
+}
+
+.hr--3 {
+    height: 180px;
+    border: none;
+}
+
+.hr--4 {
+    height: max(3.2vmin, 17px);
+    border: none;
+    clear: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* size = 24 */
+
+p {
+    max-width: 23vw;
+    font-size: max(2.4vmin, 12px);
+    line-height: 136%;
+}
+
+.p--no-line-height {
+    margin: 0;
+    line-height: normal;
+}
+
+.p--18 {
+    font-size: max(1.8vmin, 12px);
+}
+
+.p--16 {
+    color: #0D0D0D;
+    font-size: 16px;
+    line-height: 125%;
+    width: 100%;
+}
+
+.p--14 {
+    font-size: max(1.4vmin, 10px);
+}
+
+.divider {
+    height: 4vh;
+}
+
+
+/* #region steps-panel */
+
+.container-steps {
+    display: block;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    padding: 8.6vw;
+    color: white;
+    background-color: #327F94;
+}
+
+.container-steps__text {
+    display: block;
+    float: left;
+    width: 32.3%;
+    min-width: 400px;
+    /* margin-right: 13.3%; */
+}
+
+.container-steps__text-row {
+    height: max(7vmin, 34px);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.container-steps__text-col-1 {
+    font-size: max(7vmin, 34px);
+    font-family: 'Bebas Neue', cursive;
+    font-style: normal;
+    font-weight: bold;
+    width: 10.7%;
+    height: 100%;
+    margin-right: 3.8%;
+    float: left;
+    vertical-align: middle;
+}
+
+.container-steps__text-col-2 {
+    /* height: 100%; */
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 32.75%;
+    margin-right: 10%;
+    float: left;
+    vertical-align: middle;
+}
+
+.container-steps__text-col-3 {
+    width: 42.75%;
+    float: left;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container-steps__right-panel {
+    float: left;
+    height: 100%;
+}
+
+
+/* #endregion steps-panel */
+
+
+/* #region registration */
+
+.body-container--register {
+    width: 67.2%;
+    min-width: 500px;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 40px;
+}
+
+.container-register-data {
+    overflow: auto;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    width: 83%;
+    min-width: 500px;
+    padding: 4%;
+    color: black;
+    background-color: #F2F2F2;
+}
+
+.container-register-data__item {
+    flex-grow: 1;
+    border-style: none;
+    border-bottom-style: solid;
+    /* border-bottom: black; */
+    width: 28%;
+    min-width: 180px;
+    height: 44px;
+    font-size: 18px;
+    margin: 15px;
+    padding: 2.6%;
+    color: black;
+    background-color: #F2F2F2;
+    /* clear: left; */
+}
+
+::placeholder {
+    color: #B0BFC6;
+}
+
+.container-register-data__item:active,
+.container-register-data__item:focus {
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+input[type=checkbox] {
+    transform: scale(1.6);
+    font-size: 14px;
+}
+
+
+/* #endregion registration */
+
+
+/* #region buttons */
+
+.button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 15px 51px;
+    margin: 0px 0.5vh;
+    color: white;
+    background: #783294;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:focus,
+.button:hover {
+    background: #9248af;
+}
+
+.button--white {
+    color: #783294;
+    background-color: white;
+}
+
+.button--white:focus,
+.button--white:hover {
+    background: #d6a0eb;
+}
+
+
+/* #endregion buttons */
+
+
+/*#region footer */
+
+.footer__line {
+    margin-right: 40px;
+}
+
+.footer {
+    /* margin-left: 10%; */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    /* padding: 0px 15vw; */
+    font-family: 'Open Sans', sans-serif;
+    height: 44px;
+    font-size: 14px;
+    color: #B0BFC6;
+    display: flex;
+}
+
+
+/* #endregion footer */
+
+
+/*#region images */
+
+.phone-mockup {
+    position: absolute;
+    margin-left: 48%;
+    z-index: 200;
+    width: 14%;
+    min-width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+.phone-mockup__body {
+    width: 100%;
+    display: flex;
+}
+
+.phone-mockup__label {
+    /*width: 100%;*/
+    position: absolute;
+    margin-top: 3%;
+    margin-left: -1%;
+    width: 89%;
+}
+
+.car-ellipse-container {
+    max-width: 46%;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -100;
+}
+
+.ellipse-image {
+    position: relative;
+    float: right;
+    top: 0px;
+    right: 0px;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.car-image {
+    position: absolute;
+    top: 20%;
+    right: 0px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* #endregion images */
+
+/*#map {*/
+/*    width: 100%;*/
+/*    height: 400px;*/
+/*    border: #ccc solid 1px;*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*#map img {*/
+/*    max-width: inherit !important;*/
+/*}*/
