@@ -16,8 +16,11 @@ function orenhelper_styles_and_fonts()
 //    wp_enqueue_style('slick', get_template_directory_uri() . '/assets/plugins/slick/slick.css');
 
     // ШРИФТЫ
-    wp_enqueue_style('orenhelper-google-fonts-roboto', 'https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    wp_enqueue_style('orenhelper-google-fonts-bebas', 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+//    wp_enqueue_style('orenhelper-google-fonts-roboto', 'https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+//    wp_enqueue_style('orenhelper-google-fonts-bebas', 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+//    wp_enqueue_style('google-preconnect', 'https://fonts.gstatic.com');
+//    wp_enqueue_style('orenhelper-google-fonts', 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
 }
 
 // Подключение скриптов
@@ -57,7 +60,14 @@ function current_user_posts_count($userID)
  */
 function to_publish($post)
 {
-    update_user_meta($post->post_author, 'bonuses', 2);
+    $bonuses = get_user_meta($post->post_author, 'bonuses', true);
+    if(!empty($bonuses)) {
+        update_user_meta($post->post_author, 'bonuses', $bonuses+2);
+    } else {
+        update_user_meta($post->post_author, 'bonuses', 2);
+    }
+
+
 }
 
 add_action('pending_to_publish', 'to_publish', 10, 1);
