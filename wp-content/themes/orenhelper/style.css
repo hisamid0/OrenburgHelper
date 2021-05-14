@@ -5,6 +5,24 @@ Version: 1.0.0
 Description: Кастомная тема для стартапа "Помощник Оренбурга"
 */
 
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue Bold'), local('BebasNeueBold'),
+    url('./assets/fonts/BebasNeueBold.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/BebasNeueBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), local('Roboto-Regular'),
+    url('./assets/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *,
 *:after,
 *:before {
@@ -55,6 +73,14 @@ body {
     flex-direction: column;
 }
 
+.container-flex-dir-row {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+}
+
 h1 {
     font-family: 'Bebas Neue', cursive;
     font-style: normal;
@@ -93,6 +119,12 @@ h2 {
     clear: left;
 }
 
+.hr--5 {
+    height: max(2.8vmin, 12px);
+    border: none;
+    clear: left;
+}
+
 a {
     text-decoration: none;
 }
@@ -117,7 +149,8 @@ p {
 
 .p--16 {
     color: #0D0D0D;
-    font-size: 16px;
+    max-width: none;
+    font-size: max(1.6vmin, 12px);
     line-height: 125%;
     width: 100%;
 }
@@ -128,6 +161,10 @@ p {
 
 .divider {
     height: 4vh;
+}
+
+.color-grey {
+    color: #617E8C;
 }
 
 
@@ -152,9 +189,11 @@ p {
 }
 
 .container-steps__text-row {
-    height: max(7vmin, 34px);
-    display: inline-block;
+    min-height: max(7vmin, 34px);
+    display: flex;
+    align-items: center;
     vertical-align: middle;
+    float: left;
 }
 
 .container-steps__text-col-1 {
@@ -162,7 +201,7 @@ p {
     font-family: 'Bebas Neue', cursive;
     font-style: normal;
     font-weight: bold;
-    width: 10.7%;
+    /* width: 10.7%; */
     height: 100%;
     margin-right: 3.8%;
     float: left;
@@ -188,6 +227,7 @@ p {
 
 .container-steps__right-panel {
     float: left;
+    margin-left: 10vw;
     height: 100%;
 }
 
@@ -252,6 +292,93 @@ input[type=checkbox] {
 
 /* #endregion registration */
 
+/* #region send-form */
+
+.container-send-form_header {
+    display: flex;
+    height: 66px;
+    align-items: center;
+    width: 100%;
+}
+
+.container-send-form_buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: right;
+    width: 100%;
+    /* margin-right: 0px; */
+    gap: 40px
+}
+
+.container-send-form_stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-send-form_map {
+    min-width: 300px;
+    flex-grow: 2;
+    /* width: 100%;s */
+    height: 30vh;
+    background-color: lavender;
+}
+
+.container-send-form_map-right-panel {
+    width: 330px;
+}
+
+.container-send-form_map-right-panel input {
+    margin: auto;
+    font-size: max(1.6vmin, 12px);
+    padding: 1.5vmin 5.1vmin;
+}
+
+.float-right {
+    float: right;
+}
+
+.gap--80 {
+    gap: 80px;
+}
+
+.margin-right--18 {
+    margin-right: 18px;
+}
+
+.body-container--register .acf-fields.-left > .acf-field::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    background: #ffffff;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+}
+
+.acf-form .acf-fields > .acf-field {
+    border-top: #ffffff solid 0;
+}
+
+.acf-form .acf-fields .acf-field .acf-label label {
+    font-size: max(2.4vmin, 12px);
+    line-height: 136%;
+}
+
+.acf-form .acf-fields .acf-field p.description {
+    color: #0D0D0D;
+    font-size: max(1.6vmin, 12px);
+    line-height: 125%;
+}
+
+/* #endregion send-form */
+
 
 /* #region buttons */
 
@@ -280,6 +407,10 @@ input[type=checkbox] {
 .button--white {
     color: #783294;
     background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #783294;
+    font-weight: bold;
 }
 
 .button--white:focus,
@@ -379,3 +510,33 @@ input[type=checkbox] {
 /*#map img {*/
 /*    max-width: inherit !important;*/
 /*}*/
+
+/*#region auth, forgot password, etc. forms */
+
+#loginform, #lostpasswordform {
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    /*min-width: 500px;*/
+    padding: 4%;
+    color: black;
+    background-color: #F2F2F2;
+    text-align: center;
+}
+
+#loginform p input:not(#wp-submit), #lostpasswordform p input:not(#lost-pass-submit) {
+    background-color: #F2F2F2;
+    border-style: none;
+    border-bottom: 2px solid #d8d8d8;
+    height: 44px;
+    font-size: 18px;
+    margin: 15px;
+    padding: 2.6%;
+    color: black;
+    outline:none;
+}
+
+input#wp-submit {
+    margin: auto;
+}
+/* #endregion auth, forgot password, etc. forms */

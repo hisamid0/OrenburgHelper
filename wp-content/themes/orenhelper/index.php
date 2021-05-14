@@ -25,10 +25,19 @@ get_header();
         </p>
 
         <div class="divider"></div>
-        <a href="/member-register/" target="_blank">
-            <input type="button" class="button" value="Регистрация">
-        </a>
-
+        <?php if (!is_user_logged_in()):?>
+            <a href="/member-register/" target="_blank">
+                <input type="button" class="button" value="Регистрация">
+            </a>
+            <div class="divider"></div>
+            <a href="/member-login/" target="_blank">
+                <input type="button" class="button" value="Войти">
+            </a>
+        <?php else: ?>
+            <a href="/member-account/">
+                <input type="button" class="button" value="В личный кабинет">
+            </a>
+        <?php endif; ?>
     </div>
 
     <hr class="hr--2">
@@ -88,13 +97,15 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="container-steps__right-panel">
-                <hr class="hr--4">
-                <p class="p--18">Регистрация займёт не более 5 минут</p>
-                <a href="/member-register/">
-                    <input type="button" class="button button--white" value="Создать аккаунт" href="registration.html">
-                </a>
-            </div>
+            <?php if (!is_user_logged_in()):?>
+                <div class="container-steps__right-panel">
+                    <hr class="hr--4">
+                    <p class="p--18">Регистрация займёт не более 5 минут</p>
+                    <a href="/member-register/">
+                        <input type="button" class="button button--white" value="Создать аккаунт" href="registration.html">
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
 <?php
 get_footer();
