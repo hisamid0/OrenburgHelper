@@ -30,6 +30,7 @@ body {
 .text-logo--no-left-margin {
     height: 8vmin;
     margin-top: 10px;
+    float: left;
 }
 
 .text-container {
@@ -48,8 +49,16 @@ body {
     flex-direction: column;
 }
 
+.container-flex-dir-row {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+}
+
 h1 {
-    font-family: 'BebasNeue';
+    font-family: 'Bebas Neue Regular';
     font-style: normal;
     font-weight: bold;
     font-size: max(3.5vmax, 32px);
@@ -57,7 +66,7 @@ h1 {
 }
 
 h2 {
-    font-family: Bebas Neue;
+    font-family: 'Bebas Neue Regular';
     font-style: normal;
     font-weight: bold;
     font-size: max(2.625vmax, 24px);
@@ -86,6 +95,12 @@ h2 {
     clear: left;
 }
 
+.hr--5 {
+    height: max(2.8vmin, 12px);
+    border: none;
+    clear: left;
+}
+
 a {
     text-decoration: none;
 }
@@ -95,7 +110,7 @@ a {
 
 p {
     max-width: 23vw;
-    font-size: max(2.4vmin, 12px);
+    font-size: max(2.4vmin, 16px);
     line-height: 136%;
 }
 
@@ -110,7 +125,8 @@ p {
 
 .p--16 {
     color: #0D0D0D;
-    font-size: 16px;
+    max-width: none;
+    font-size: max(1.6vmin, 12px);
     line-height: 125%;
     width: 100%;
 }
@@ -121,6 +137,10 @@ p {
 
 .divider {
     height: 4vh;
+}
+
+.color-grey {
+    color: #617E8C;
 }
 
 
@@ -145,17 +165,19 @@ p {
 }
 
 .container-steps__text-row {
-    height: max(7vmin, 34px);
-    display: inline-block;
+    min-height: max(7vmin, 34px);
+    display: flex;
+    align-items: center;
     vertical-align: middle;
+    float: left;
 }
 
 .container-steps__text-col-1 {
     font-size: max(7vmin, 34px);
-    font-family: 'BebasNeue';
+    font-family: 'Bebas Neue Regular';
     font-style: normal;
     font-weight: bold;
-    width: 10.7%;
+    /* width: 10.7%; */
     height: 100%;
     margin-right: 3.8%;
     float: left;
@@ -181,6 +203,7 @@ p {
 
 .container-steps__right-panel {
     float: left;
+    margin-left: 10vw;
     height: 100%;
 }
 
@@ -247,6 +270,65 @@ input[type=checkbox] {
 /* #endregion registration */
 
 
+/* #region send-form */
+
+.container-send-form_header {
+    display: flex;
+    height: 66px;
+    align-items: center;
+    width: 100%;
+}
+
+.container-send-form_buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: right;
+    width: 100%;
+    /* margin-right: 0px; */
+    gap: 40px
+}
+
+.container-send-form_stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-send-form_map {
+    min-width: 300px;
+    flex-grow: 2;
+    /* width: 100%;s */
+    height: 30vh;
+    background-color: lavender;
+}
+
+.container-send-form_map-right-panel {
+    width: 330px;
+}
+
+.container-send-form_map-right-panel input {
+    margin: auto;
+    font-size: max(1.6vmin, 12px);
+    padding: 1.5vmin 5.1vmin;
+}
+
+.float-right {
+    float: right;
+}
+
+.gap--80 {
+    gap: 80px;
+}
+
+.margin-right--18 {
+    margin-right: 18px;
+}
+
+
+/* #endregion send-form */
+
+
 /* #region buttons */
 
 .button {
@@ -274,6 +356,10 @@ input[type=checkbox] {
 .button--white {
     color: #783294;
     background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #783294;
+    font-weight: bold;
 }
 
 .button--white:focus,
